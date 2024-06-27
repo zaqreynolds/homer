@@ -12,6 +12,27 @@ const ClientWeek = () => {
       <WorkoutCard />
       <WorkoutCard />
       <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
+      <WorkoutCard />
     </div>
   );
 };
