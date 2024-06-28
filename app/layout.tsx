@@ -3,6 +3,7 @@ import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/components/theme-provider";
 import Header from "@/components/Header";
+import { HomerProvider } from "./HomerContext";
 
 // const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -26,12 +27,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="h-screen w-screen flex flex-col overflow-hidden">
-            <main className="flex flex-grow flex-col overflow-hidden">
-              <Header />
-              {children}
-            </main>
-          </div>
+          <HomerProvider>
+            <div className="h-screen w-screen flex flex-col overflow-hidden">
+              <main className="flex flex-grow flex-col overflow-hidden">
+                <Header />
+                {children}
+              </main>
+            </div>
+          </HomerProvider>
         </ThemeProvider>
       </body>
     </html>
