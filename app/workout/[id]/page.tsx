@@ -9,14 +9,14 @@ const Workout = async ({ params }: { params: { id: string } }) => {
   await dbConnect();
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    return <div>No workout found</div>;
+    return (
+      <div className="grow flex flex-col w-full items-center ">
+        <div className="grow flex items-center">Oops! No workout found...</div>
+      </div>
+    );
   }
   try {
     const workout = await Workouts.findById(id);
-
-    if (!workout) {
-      return <div>No workout found</div>;
-    }
 
     return (
       <div className="grow flex flex-col w-full items-center">
