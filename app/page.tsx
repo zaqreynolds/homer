@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ClientWeek from "./ClientWeek/page";
+import ClientWeek from "./clientWeek/page";
 
 export default function Home() {
   return (
