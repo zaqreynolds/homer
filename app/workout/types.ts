@@ -17,3 +17,19 @@ export interface WorkoutDTO {
   completed?: boolean;
   currentWeek?: boolean;
 }
+
+export interface ExerciseDTO {
+  id: number;
+  name: string;
+  numSets: number;
+  suggestedReps?: string;
+  reps?: [number];
+  weight?: string;
+  time?: number;
+  rest?: number;
+  notes?: string;
+  completed?: boolean;
+  inProgress?: boolean;
+  alert?: boolean;
+  workoutId: number;
+}

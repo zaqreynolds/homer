@@ -18,6 +18,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "100 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -29,6 +30,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "25 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -40,6 +42,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "200 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -51,6 +54,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "50 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -79,6 +83,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "135 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -90,6 +95,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "65 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -101,6 +107,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "0 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -112,6 +119,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "25 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices port.",
             },
@@ -140,6 +148,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "185 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -151,6 +160,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "135 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -162,6 +172,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "50 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -173,6 +184,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "50 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in.",
             },
@@ -201,6 +213,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "0 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -212,6 +225,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "65 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -223,6 +237,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "20 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -234,6 +249,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "25 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed.",
             },
@@ -261,6 +277,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "100 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -272,6 +289,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "25 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -283,6 +301,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "200 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -294,6 +313,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "50 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -322,6 +342,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "135 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -333,6 +354,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "65 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -344,6 +366,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "0 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -355,6 +378,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "25 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices port.",
             },
@@ -383,6 +407,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "185 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -394,6 +419,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "135 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -405,6 +431,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "50 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -416,6 +443,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "50 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in.",
             },
@@ -444,6 +472,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "0 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -455,6 +484,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "65 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -466,6 +496,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "20 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed vitae orci ac purus suscipit cursus. Proin ultrices porta tortor, sit amet accumsan neque finibus sed",
             },
@@ -477,6 +508,7 @@ async function main() {
               },
               suggestedReps: "8-12",
               weight: "25 lbs",
+              rest: 60,
               notes:
                 "Etiam et feugiat libero, a elementum mi. Fusce vulputate ante arcu, quis rhoncus nulla eleifend in. Sed.",
             },

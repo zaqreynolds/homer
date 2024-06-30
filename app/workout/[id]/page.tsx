@@ -1,6 +1,8 @@
 import { WorkoutDTO } from "../types";
 
 import { PrismaClient } from "@prisma/client";
+import ExerciseCard from "./ExerciseCard";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const prisma = new PrismaClient();
 
@@ -21,13 +23,37 @@ const Workout = async ({ params }: { params: { id: string } }) => {
       </div>
     );
   }
+
+  const exercises = await prisma.exercise.findMany({
+    where: {
+      workoutId: workout.id,
+    },
+  });
+  console.log(workout.id);
   try {
     return (
       <div className="grow flex flex-col p-5 w-full items-center">
         <h2 className="text-xl text-center">
-          Day {workout.day}&apos;s Workout: {workout.name}
+          Day {workout.day}: {workout.name}
         </h2>
-        {/* Display more details about the workout here */}
+        {exercises.map((exercise) => (
+          <ExerciseCard
+            key={exercise.id}
+            id={exercise.id}
+            workoutId={exercise.workoutId}
+            name={exercise.name}
+            numSets={exercise.numSets}
+            suggestedReps={exercise.suggestedReps || ""}
+            rest={exercise.rest || undefined}
+          />
+        ))}
+        <div className="flex grow" />
+        <Card>
+          <CardHeader>Coach&apos;s Notes</CardHeader>
+          <CardContent>
+            {workout.notes && <div>{workout.notes}</div>}
+          </CardContent>
+        </Card>
       </div>
     );
   } catch (error) {

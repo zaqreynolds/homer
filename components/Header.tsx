@@ -1,11 +1,12 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import DarkModeToggle from "./DarkModeToggle";
 import BackButton from "./BackButton";
 
 const Header = () => {
   const router = useRouter();
+  const currentPath = (router as any).pathname;
+  console.log("currentPath", currentPath);
 
   return (
     <div className="w-full flex justify-between">

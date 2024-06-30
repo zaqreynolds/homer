@@ -33,7 +33,11 @@ model Exercise {
   reps Int[]
   weight String?
   time Int?
+  rest Int?
   notes String?
+  completed Boolean @default(false)
+  inProgress Boolean @default(false)
+  alert Boolean @default(false)
   workoutId Int
   workout Workout @relation(fields: [workoutId], references: [id])
 }
