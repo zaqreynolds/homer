@@ -1,5 +1,5 @@
 export interface WorkoutCardDTO {
-  id: string;
+  id: number;
   day: string;
   name: string;
   inProgress?: boolean;
