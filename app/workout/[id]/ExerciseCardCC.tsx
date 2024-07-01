@@ -54,37 +54,36 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
         </div>
         {isOpen && (
           <>
-            <div className="grid grid-cols-4 items-center justify-center text-center">
+            <div className="grid grid-cols-3 items-center text-center">
               <div className="col-span-1"></div>
-              <div className="text-xs mx-3 col-span-1">Success</div>
+              <div className="text-xs col-span-1">Success</div>
               <div className="text-xs col-span-1">Failure</div>
-              <div className="col-span-1"></div>
             </div>
             {sets?.map((set, index) => (
               <div
                 key={set.id}
-                className="grid grid-cols-4 items-center justify-center text-center"
+                className="grid grid-cols-3 items-center text-center"
               >
-                <div className="mr-5 w-20 col-span-1">Set {index + 1}</div>
+                <div className="col-span-1">Set {index + 1}</div>
                 <ToggleGroup
                   type="single"
                   value={selectedValues[index]}
                   onValueChange={(value) => handleCheckboxToggle(index, value)}
-                  className="col-span-2"
+                  className="col-span-2 flex justify-around"
                 >
                   <ToggleGroupItem value="success" aria-label="Toggle success">
-                    <Checkbox
-                      checked={selectedValues[index] === "success"}
-                      className="mr-10"
-                    />
+                    <Checkbox checked={selectedValues[index] === "success"} />
                   </ToggleGroupItem>
                   <ToggleGroupItem value="failure" aria-label="Toggle failure">
                     <Checkbox checked={selectedValues[index] === "failure"} />
                   </ToggleGroupItem>
                 </ToggleGroup>
-                <div className="col-span-1"></div>
               </div>
             ))}
+            <div className="flex-col">
+              <div className="text-sm my-2">Notes:</div>
+              <div className="text-sm">{exercise.notes}</div>
+            </div>
           </>
         )}
       </CardContent>
