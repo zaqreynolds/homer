@@ -29,7 +29,7 @@ model Exercise {
   name String
   numSets Int
   sets Set[]
-  suggestedReps String?
+  suggestedReps String
   reps Int[]
   weight String?
   time Int?

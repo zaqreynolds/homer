@@ -1,5 +1,4 @@
-import { WorkoutDTO } from "../types";
-
+import { WorkoutDTO, ExerciseDTO } from "../types";
 import { PrismaClient } from "@prisma/client";
 import ExerciseCard from "./ExerciseCard";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -24,12 +23,11 @@ const Workout = async ({ params }: { params: { id: string } }) => {
     );
   }
 
-  const exercises = await prisma.exercise.findMany({
+  const exercises = (await prisma.exercise.findMany({
     where: {
       workoutId: workout.id,
     },
-  });
-  console.log(workout.id);
+  })) as ExerciseDTO[];
   try {
     return (
       <div className="grow flex flex-col p-5 w-full items-center">
@@ -37,15 +35,7 @@ const Workout = async ({ params }: { params: { id: string } }) => {
           Day {workout.day}: {workout.name}
         </h2>
         {exercises.map((exercise) => (
-          <ExerciseCard
-            key={exercise.id}
-            id={exercise.id}
-            workoutId={exercise.workoutId}
-            name={exercise.name}
-            numSets={exercise.numSets}
-            suggestedReps={exercise.suggestedReps || ""}
-            rest={exercise.rest || undefined}
-          />
+          <ExerciseCard key={exercise.id} exercise={exercise} />
         ))}
         <div className="flex grow" />
         <Card>

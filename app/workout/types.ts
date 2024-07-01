@@ -22,7 +22,7 @@ export interface ExerciseDTO {
   id: number;
   name: string;
   numSets: number;
-  suggestedReps?: string;
+  suggestedReps: string;
   reps?: [number];
   weight?: string;
   time?: number;
@@ -32,4 +32,16 @@ export interface ExerciseDTO {
   inProgress?: boolean;
   alert?: boolean;
   workoutId: number;
+}
+
+export interface SetDTO {
+  id: number;
+  success: boolean | null;
+  failure: boolean | null;
+  exerciseId: number;
+}
+
+export interface ExerciseCardPropsDTO {
+  exercise: ExerciseDTO;
+  sets?: SetDTO[];
 }
