@@ -18,8 +18,6 @@ const ExerciseCard: React.FC<ExerciseCardPropsDTO> = async (
     },
   })) as SetDTO[];
 
-  console.log("sets", sets);
-
   return <ExerciseCardCC exercise={exercise} sets={sets} />;
 };
 

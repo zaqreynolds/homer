@@ -5,10 +5,24 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ChevronUpIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
 import { ExerciseCardPropsDTO, ExerciseDTO, SetDTO } from "../types";
+import { Checkbox } from "@/components/ui/checkbox";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
+  const [selectedValues, setSelectedValues] = useState(
+    sets?.map(() => "") || []
+  );
+  console.log("sets", sets);
+
+  const handleCheckboxToggle = (index: number, value: string) => {
+    setSelectedValues((prev) => {
+      const newValues = [...prev];
+      newValues[index] = value === newValues[index] ? "" : value;
+      return newValues;
+    });
+  };
 
   return (
     <Card className="flex-row w-full my-2">
@@ -38,7 +52,41 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
             />
           </Button>
         </div>
-        {isOpen && <div>hi</div>}
+        {isOpen && (
+          <>
+            <div className="grid grid-cols-4 items-center justify-center text-center">
+              <div className="col-span-1"></div>
+              <div className="text-xs mx-3 col-span-1">Success</div>
+              <div className="text-xs col-span-1">Failure</div>
+              <div className="col-span-1"></div>
+            </div>
+            {sets?.map((set, index) => (
+              <div
+                key={set.id}
+                className="grid grid-cols-4 items-center justify-center text-center"
+              >
+                <div className="mr-5 w-20 col-span-1">Set {index + 1}</div>
+                <ToggleGroup
+                  type="single"
+                  value={selectedValues[index]}
+                  onValueChange={(value) => handleCheckboxToggle(index, value)}
+                  className="col-span-2"
+                >
+                  <ToggleGroupItem value="success" aria-label="Toggle success">
+                    <Checkbox
+                      checked={selectedValues[index] === "success"}
+                      className="mr-10"
+                    />
+                  </ToggleGroupItem>
+                  <ToggleGroupItem value="failure" aria-label="Toggle failure">
+                    <Checkbox checked={selectedValues[index] === "failure"} />
+                  </ToggleGroupItem>
+                </ToggleGroup>
+                <div className="col-span-1"></div>
+              </div>
+            ))}
+          </>
+        )}
       </CardContent>
     </Card>
   );
