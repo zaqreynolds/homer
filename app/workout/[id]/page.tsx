@@ -30,7 +30,7 @@ const Workout = async ({ params }: { params: { id: string } }) => {
   })) as ExerciseDTO[];
   try {
     return (
-      <div className="grow flex flex-col p-5 w-full items-center">
+      <div className="grow flex flex-col p-5 w-full items-center overflow-auto">
         <h2 className="text-xl text-center">
           Day {workout.day}: {workout.name}
         </h2>
