@@ -1,30 +1,40 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 
 const BackButton = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const [hide, setHide] = useState(false);
 
-  const navigateUp = () => {
-    // Get the current pathname
-    const currentPath = pathname;
+  useEffect(() => {
+    if (pathname === "/") {
+      setHide(true);
+    } else {
+      setHide(false);
+    }
+  }, [pathname]);
 
-    // Split the pathname into segments
-    const pathSegments = currentPath.split("/").filter(Boolean);
+  // const navigateUp = () => {
+  //   // Get the current pathname
+  //   const currentPath = pathname;
 
-    // Remove the last segment to navigate up one level
-    const newPath = "/" + pathSegments.slice(0, -1).join("/");
+  //   // Split the pathname into segments
+  //   const pathSegments = currentPath.split("/").filter(Boolean);
 
-    // Navigate to the new path
-    router.push(newPath);
-  };
+  //   // Remove the last segment to navigate up one level
+  //   const newPath = "/" + pathSegments.slice(0, -1).join("/");
+
+  //   // Navigate to the new path
+  //   router.push(newPath);
+  // };
 
   return (
     <Button
-      onClick={navigateUp}
+      onClick={router.back}
       variant="ghost"
-      className="p-3 focus:bg-transparent"
+      className={`p-3 focus:bg-transparent ${hide ? "hidden" : ""}`}
     >
       Back
     </Button>
