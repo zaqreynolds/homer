@@ -41,7 +41,7 @@ const Workout = async ({ params }: { params: { id: string } }) => {
         <Card>
           <CardHeader>Coach&apos;s Notes</CardHeader>
           <CardContent>
-            {workout.notes && <div>{workout.notes}</div>}
+            {workout.notes && <div className="text-sm">{workout.notes}</div>}
           </CardContent>
         </Card>
       </div>

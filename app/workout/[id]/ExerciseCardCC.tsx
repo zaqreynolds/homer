@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronUpIcon, CheckboxIcon, BoxIcon } from "@radix-ui/react-icons";
 import { useEffect, useState } from "react";
-import { ExerciseCardPropsDTO, ExerciseDTO, SetDTO } from "../types";
-import { Checkbox } from "@/components/ui/checkbox";
+import { ExerciseCardPropsDTO } from "../types";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
@@ -18,6 +17,8 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
   console.log("exercise", exercise);
   const [inProgress, setInProgress] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [anyFailure, setAnyFailure] = useState(false);
 
   const handleCheckboxToggle = (index: number, value: string) => {
     setSelectedValues((prev) => {
@@ -29,21 +30,30 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
 
   useEffect(() => {
     const anySetInProgress = selectedValues.some((value) => value !== "");
-    const allSetsCompleted = selectedValues.every(
-      (value) => value === "success" || value === "failure"
-    );
-
     setInProgress(anySetInProgress);
-    setCompleted(allSetsCompleted);
   }, [selectedValues]);
 
   useEffect(() => {
-    console.log(`Exercise "${exercise.name}" in progress:`, inProgress);
-    console.log(`Exercise "${exercise.name}" completed:`, completed);
-  }, [inProgress, completed, exercise.name]);
+    const allSetsCompleted = selectedValues.every(
+      (value) => value === "success" || value === "failure"
+    );
+    const allSuccess = selectedValues.every((value) => value === "success");
+    const anyFails = selectedValues.some((value) => value === "failure");
+
+    setCompleted(allSetsCompleted);
+    setInProgress(!allSetsCompleted);
+    setSuccess(allSuccess);
+    setAnyFailure(anyFails);
+  }, [selectedValues]);
 
   return (
-    <Card className="flex-row w-full my-2">
+    <Card
+      className={`flex-row w-full my-2 ${inProgress ? "border-black" : ""} ${
+        success ? "border-green-600" : ""
+      } ${anyFailure ? "border-orange-500" : ""} ${
+        !isOpen && success ? "bg-green-100" : ""
+      } ${!isOpen && anyFailure ? "bg-orange-100" : ""}`}
+    >
       <CardContent className="flex flex-col py-2">
         <div className="flex w-full transition-transform duration-200">
           <div className="flex items-center w-2/6">{exercise.name}</div>
@@ -62,7 +72,11 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
               <div className="text-sm"> s</div>
             </div>
           )}
-          <Button variant="ghost" className="px-0 ml-2" onClick={toggleOpen}>
+          <Button
+            variant="ghost"
+            className="px-0 ml-2 focus:bg-transparent"
+            onClick={toggleOpen}
+          >
             <ChevronUpIcon
               className={`h-5 w-5 transition-transform duration-300 ${
                 isOpen ? "rotate-180" : ""
@@ -90,7 +104,7 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
                     onValueChange={(value) =>
                       handleCheckboxToggle(index, value)
                     }
-                    className="flex justify-around w-full"
+                    className="flex justify-around w-full "
                   >
                     <ToggleGroupItem
                       value="success"

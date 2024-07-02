@@ -21,7 +21,11 @@ const BackButton = () => {
   };
 
   return (
-    <Button onClick={navigateUp} variant="ghost" className="p-3">
+    <Button
+      onClick={navigateUp}
+      variant="ghost"
+      className="p-3 focus:bg-transparent"
+    >
       Back
     </Button>
   );
