@@ -13,8 +13,7 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
   const [selectedValues, setSelectedValues] = useState(
     sets?.map(() => "") || []
   );
-  console.log("sets", sets);
-  console.log("exercise", exercise);
+
   const [inProgress, setInProgress] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -30,25 +29,21 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
 
   useEffect(() => {
     const anySetInProgress = selectedValues.some((value) => value !== "");
-    setInProgress(anySetInProgress);
-  }, [selectedValues]);
-
-  useEffect(() => {
     const allSetsCompleted = selectedValues.every(
       (value) => value === "success" || value === "failure"
     );
     const allSuccess = selectedValues.every((value) => value === "success");
     const anyFails = selectedValues.some((value) => value === "failure");
 
+    setInProgress(anySetInProgress && !allSetsCompleted);
     setCompleted(allSetsCompleted);
-    setInProgress(!allSetsCompleted);
     setSuccess(allSuccess);
-    setAnyFailure(anyFails);
+    setAnyFailure(allSetsCompleted && anyFails);
   }, [selectedValues]);
 
   return (
     <Card
-      className={`flex-row w-full my-2 ${inProgress ? "border-black" : ""} ${
+      className={`flex-row w-full my-2 ${inProgress ? "border-primary" : ""} ${
         success ? "border-green-600" : ""
       } ${anyFailure ? "border-orange-500" : ""} ${
         !isOpen && success ? "bg-green-100" : ""
