@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronUpIcon } from "@radix-ui/react-icons";
-import { useState } from "react";
+import { ChevronUpIcon, CheckboxIcon, BoxIcon } from "@radix-ui/react-icons";
+import { useEffect, useState } from "react";
 import { ExerciseCardPropsDTO, ExerciseDTO, SetDTO } from "../types";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -15,6 +15,9 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
     sets?.map(() => "") || []
   );
   console.log("sets", sets);
+  console.log("exercise", exercise);
+  const [inProgress, setInProgress] = useState(false);
+  const [completed, setCompleted] = useState(false);
 
   const handleCheckboxToggle = (index: number, value: string) => {
     setSelectedValues((prev) => {
@@ -23,6 +26,21 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
       return newValues;
     });
   };
+
+  useEffect(() => {
+    const anySetInProgress = selectedValues.some((value) => value !== "");
+    const allSetsCompleted = selectedValues.every(
+      (value) => value === "success" || value === "failure"
+    );
+
+    setInProgress(anySetInProgress);
+    setCompleted(allSetsCompleted);
+  }, [selectedValues]);
+
+  useEffect(() => {
+    console.log(`Exercise "${exercise.name}" in progress:`, inProgress);
+    console.log(`Exercise "${exercise.name}" completed:`, completed);
+  }, [inProgress, completed, exercise.name]);
 
   return (
     <Card className="flex-row w-full my-2">
@@ -65,19 +83,39 @@ const ExerciseCardCC = ({ exercise, sets }: ExerciseCardPropsDTO) => {
                 className="grid grid-cols-3 items-center text-center"
               >
                 <div className="col-span-1">Set {index + 1}</div>
-                <ToggleGroup
-                  type="single"
-                  value={selectedValues[index]}
-                  onValueChange={(value) => handleCheckboxToggle(index, value)}
-                  className="col-span-2 flex justify-around"
-                >
-                  <ToggleGroupItem value="success" aria-label="Toggle success">
-                    <Checkbox checked={selectedValues[index] === "success"} />
-                  </ToggleGroupItem>
-                  <ToggleGroupItem value="failure" aria-label="Toggle failure">
-                    <Checkbox checked={selectedValues[index] === "failure"} />
-                  </ToggleGroupItem>
-                </ToggleGroup>
+                <div className="col-span-2 flex justify-around">
+                  <ToggleGroup
+                    type="single"
+                    value={selectedValues[index]}
+                    onValueChange={(value) =>
+                      handleCheckboxToggle(index, value)
+                    }
+                    className="flex justify-around w-full"
+                  >
+                    <ToggleGroupItem
+                      value="success"
+                      aria-label="Toggle success"
+                      className="flex justify-center items-center"
+                    >
+                      {selectedValues[index] === "success" ? (
+                        <CheckboxIcon className="text-green-500 h-5 w-5" />
+                      ) : (
+                        <BoxIcon className="text-gray-500 h-5 w-5" />
+                      )}
+                    </ToggleGroupItem>
+                    <ToggleGroupItem
+                      value="failure"
+                      aria-label="Toggle failure"
+                      className="flex justify-center items-center"
+                    >
+                      {selectedValues[index] === "failure" ? (
+                        <CheckboxIcon className="text-red-500 h-5 w-5" />
+                      ) : (
+                        <BoxIcon className="text-gray-500 h-5 w-5" />
+                      )}
+                    </ToggleGroupItem>
+                  </ToggleGroup>
+                </div>
               </div>
             ))}
             <div className="flex-col">
